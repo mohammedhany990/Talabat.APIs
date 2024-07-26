@@ -1,0 +1,82 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj": {}
+  },
+  "projects": {
+    "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj",
+        "projectName": "Talabat.Core",
+        "projectPath": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Core\\Talabat.Core.csproj",
+        "packagesPath": "C:\\Users\\Mohammd Hany\\.nuget\\packages\\",
+        "outputPath": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Core\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\Mohammd Hany\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.AspNetCore.Identity.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[6.0.32, )"
+            },
+            "StackExchange.Redis": {
+              "target": "Package",
+              "version": "[2.8.0, )"
+            },
+            "Stripe.net": {
+              "target": "Package",
+              "version": "[45.4.0, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.205\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
