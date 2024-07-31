@@ -5,6 +5,7 @@ using Talabat.Core;
 using Talabat.Core.Repositories;
 using Talabat.Core.Services;
 using Talabat.Repository;
+using Talabat.Service.CacheService;
 using Talabat.Service.OrderService;
 using Talabat.Service.PaymentService;
 
@@ -30,6 +31,7 @@ namespace Talabat.APIs.Extensions
             // Allow DI for IPaymentService
             Services.AddScoped<IPaymentService, PaymentService>();
 
+            Services.AddSingleton<IResponseCacheService, ResponseCacheService>();
 
             // Validation Error: api/id {id is int}-> api/five will generate this error
             Services.Configure<ApiBehaviorOptions>(options =>

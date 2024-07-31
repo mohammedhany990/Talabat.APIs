@@ -24,6 +24,9 @@ namespace Talabat.Service.PaymentService
             _basketRepository = basketRepository;
             _unitOfWork = unitOfWork;
         }
+
+
+        #region CreateOrUpdatePaymentIntentAsync
         public async Task<CustomerBasket?> CreateOrUpdatePaymentIntentAsync(string basketId)
         {
             // 1. Secret Key
@@ -37,6 +40,7 @@ namespace Talabat.Service.PaymentService
             }
 
             var shippingPrice = 0M;
+
             if (basket.DeliveryMethodId.HasValue)
             {
                 var delivery = await _unitOfWork.Repository<DeliveryMethod>().GetAsync(basket.DeliveryMethodId.Value);
@@ -92,7 +96,11 @@ namespace Talabat.Service.PaymentService
 
             return basket;
         }
+        #endregion
 
+
+
+        #region UpdateOrderStatusAsync
         public async Task<Order?> UpdateOrderStatusAsync(string paymentIntentId, bool isPaid)
         {
             var spec = new OrderWithPaymentIntentSpec(paymentIntentId);
@@ -101,21 +109,16 @@ namespace Talabat.Service.PaymentService
             {
                 return null;
             }
-            order.Status = isPaid ? order.Status = OrderStatus.PaymentReceived
-                : order.Status = OrderStatus.PaymentFailed;
-            //if (isPaid)
-            //{
-            //    order.Status = OrderStatus.PaymentReceived;
-            //}
-            //else
-            //{
-            //    order.Status = OrderStatus.PaymentFailed;
-            //}
+            order.Status = isPaid ? OrderStatus.PaymentReceived
+                                  : OrderStatus.PaymentFailed;
+
 
             _unitOfWork.Repository<Order>().Update(order);
             await _unitOfWork.CompleteAsync();
 
             return order;
         }
+        #endregion
+
     }
 }
