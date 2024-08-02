@@ -7,5 +7,8 @@ namespace Talabat.Core.Entities.Identity
         public string DisplayName { get; set; } = null!;
 
         public Address? Address { get; set; } = null!;
+
+        public List<RefreshToken>? RefreshTokens { get; set; }
+
     }
 }

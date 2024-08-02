@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "E:\\CodePractice\\C#\\Talabat.APIs\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A17714C4-D3C0-4DD1-98A6-A3992E306D48}|Talabat.APIs\\Talabat.APIs.csproj|e:\\codepractice\\c#\\talabat.apis\\talabat.apis\\helper\\cacheattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A17714C4-D3C0-4DD1-98A6-A3992E306D48}|Talabat.APIs\\Talabat.APIs.csproj|solutionrelative:talabat.apis\\helper\\cacheattribute.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{A17714C4-D3C0-4DD1-98A6-A3992E306D48}|Talabat.APIs\\Talabat.APIs.csproj|e:\\codepractice\\c#\\talabat.apis\\talabat.apis\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A17714C4-D3C0-4DD1-98A6-A3992E306D48}|Talabat.APIs\\Talabat.APIs.csproj|solutionrelative:talabat.apis\\controllers\\accountscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A17714C4-D3C0-4DD1-98A6-A3992E306D48}|Talabat.APIs\\Talabat.APIs.csproj|e:\\codepractice\\c#\\talabat.apis\\talabat.apis\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A17714C4-D3C0-4DD1-98A6-A3992E306D48}|Talabat.APIs\\Talabat.APIs.csproj|solutionrelative:talabat.apis\\controllers\\productscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{AF0447EE-5E6C-486B-935B-3E55359ADBFA}|Talabat.Core\\Talabat.Core.csproj|e:\\codepractice\\c#\\talabat.apis\\talabat.core\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{AF0447EE-5E6C-486B-935B-3E55359ADBFA}|Talabat.Core\\Talabat.Core.csproj|solutionrelative:talabat.core\\entities\\refreshtoken.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{E9596655-17B0-4F87-B854-3E40CA3FC747}|Talabat.Service\\Talabat.Service.csproj|e:\\codepractice\\c#\\talabat.apis\\talabat.service\\cacheservice\\responsecacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E9596655-17B0-4F87-B854-3E40CA3FC747}|Talabat.Service\\Talabat.Service.csproj|solutionrelative:talabat.service\\cacheservice\\responsecacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{AF0447EE-5E6C-486B-935B-3E55359ADBFA}|Talabat.Core\\Talabat.Core.csproj|e:\\codepractice\\c#\\talabat.apis\\talabat.core\\services\\iresponsecacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{AF0447EE-5E6C-486B-935B-3E55359ADBFA}|Talabat.Core\\Talabat.Core.csproj|solutionrelative:talabat.core\\services\\iresponsecacheservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E9596655-17B0-4F87-B854-3E40CA3FC747}|Talabat.Service\\Talabat.Service.csproj|e:\\codepractice\\c#\\talabat.apis\\talabat.service\\tokenservice\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{E9596655-17B0-4F87-B854-3E40CA3FC747}|Talabat.Service\\Talabat.Service.csproj|solutionrelative:talabat.service\\tokenservice\\authenticationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,7 +22,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 8,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -58,54 +54,41 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "ProductsController.cs",
-              "DocumentMoniker": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.APIs\\Controllers\\ProductsController.cs",
-              "RelativeDocumentMoniker": "Talabat.APIs\\Controllers\\ProductsController.cs",
-              "ToolTip": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.APIs\\Controllers\\ProductsController.cs",
-              "RelativeToolTip": "Talabat.APIs\\Controllers\\ProductsController.cs",
-              "ViewState": "AQIAACwAAAAAAAAAAAAgwD4AAAAaAAAA",
+              "DocumentIndex": 0,
+              "Title": "AccountsController.cs",
+              "DocumentMoniker": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.APIs\\Controllers\\AccountsController.cs",
+              "RelativeDocumentMoniker": "Talabat.APIs\\Controllers\\AccountsController.cs",
+              "ToolTip": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.APIs\\Controllers\\AccountsController.cs",
+              "RelativeToolTip": "Talabat.APIs\\Controllers\\AccountsController.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAQwCcAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-30T23:26:47.849Z",
+              "WhenOpened": "2024-08-02T17:09:56.674Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CacheAttribute.cs",
-              "DocumentMoniker": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.APIs\\Helper\\CacheAttribute.cs",
-              "RelativeDocumentMoniker": "Talabat.APIs\\Helper\\CacheAttribute.cs",
-              "ToolTip": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.APIs\\Helper\\CacheAttribute.cs",
-              "RelativeToolTip": "Talabat.APIs\\Helper\\CacheAttribute.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAAzwBYAAAAmAAAA",
+              "DocumentIndex": 1,
+              "Title": "RefreshToken.cs",
+              "DocumentMoniker": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Core\\Entities\\RefreshToken.cs",
+              "RelativeDocumentMoniker": "Talabat.Core\\Entities\\RefreshToken.cs",
+              "ToolTip": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Core\\Entities\\RefreshToken.cs",
+              "RelativeToolTip": "Talabat.Core\\Entities\\RefreshToken.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAuwAUAAAAdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T18:01:43.655Z",
+              "WhenOpened": "2024-08-02T16:39:23.147Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "ResponseCacheService.cs",
-              "DocumentMoniker": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Service\\CacheService\\ResponseCacheService.cs",
-              "RelativeDocumentMoniker": "Talabat.Service\\CacheService\\ResponseCacheService.cs",
-              "ToolTip": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Service\\CacheService\\ResponseCacheService.cs",
-              "RelativeToolTip": "Talabat.Service\\CacheService\\ResponseCacheService.cs",
-              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAcAAAAzAAAA",
+              "Title": "AuthenticationService.cs",
+              "DocumentMoniker": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Service\\TokenService\\AuthenticationService.cs",
+              "RelativeDocumentMoniker": "Talabat.Service\\TokenService\\AuthenticationService.cs",
+              "ToolTip": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Service\\TokenService\\AuthenticationService.cs",
+              "RelativeToolTip": "Talabat.Service\\TokenService\\AuthenticationService.cs",
+              "ViewState": "AQIAABEAAAAAAAAAAAAkwCkAAABdAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T14:34:49.089Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "IResponseCacheService.cs",
-              "DocumentMoniker": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Core\\Services\\IResponseCacheService.cs",
-              "RelativeDocumentMoniker": "Talabat.Core\\Services\\IResponseCacheService.cs",
-              "ToolTip": "E:\\CodePractice\\C#\\Talabat.APIs\\Talabat.Core\\Services\\IResponseCacheService.cs",
-              "RelativeToolTip": "Talabat.Core\\Services\\IResponseCacheService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAAWAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-07-28T14:32:20.862Z",
+              "WhenOpened": "2024-08-02T14:46:48.92Z",
               "EditorCaption": ""
             }
           ]

@@ -20,7 +20,7 @@ namespace Talabat.APIs.Extensions
 
 
             // Allow DI for ITokenService
-            services.AddScoped<ITokenService, TokenService>();
+            services.AddScoped<IAuthenticationService, AuthenticationService>();
 
             // I changed the defautl scheme, so I have to estimate it here
             // I have to set the Challenge Scheme
@@ -39,6 +39,7 @@ namespace Talabat.APIs.Extensions
                     ValidateLifetime = true,
                     ValidateIssuerSigningKey = true,
                     IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(configuration["JWT:Key"])),
+                    ClockSkew = TimeSpan.Zero
                 };
             });
 

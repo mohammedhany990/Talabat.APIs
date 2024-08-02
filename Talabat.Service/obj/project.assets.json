@@ -1048,7 +1048,8 @@
         "dependencies": {
           "Microsoft.AspNetCore.Identity.EntityFrameworkCore": "6.0.32",
           "StackExchange.Redis": "2.8.0",
-          "Stripe.net": "45.4.0"
+          "Stripe.net": "45.4.0",
+          "System.IdentityModel.Tokens.Jwt": "6.35.0"
         },
         "compile": {
           "bin/placeholder/Talabat.Core.dll": {}
