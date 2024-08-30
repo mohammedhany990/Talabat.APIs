@@ -8,6 +8,7 @@ namespace Talabat.APIs.DTOs.Account
         public string Email { get; set; }
         public string Token { get; set; }
         public DateTime? ExpiresOn { get; set; }
+
         [JsonIgnore]
         public string? RefreshToken { get; set; }
 

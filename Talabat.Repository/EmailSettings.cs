@@ -24,7 +24,7 @@ namespace Talabat.Repository
 
 
         public void SendEmail(Email email)
-        {
+        { 
             var mail = new MimeMessage
             {
                 Sender = MailboxAddress.Parse(_options.Email),

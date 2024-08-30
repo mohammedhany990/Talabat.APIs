@@ -1088,6 +1088,7 @@
         "dependencies": {
           "MailKit": "4.7.1.1",
           "Microsoft.EntityFrameworkCore.SqlServer": "6.0.33",
+          "MimeKit": "4.7.1",
           "Talabat.Core": "1.0.0"
         },
         "compile": {

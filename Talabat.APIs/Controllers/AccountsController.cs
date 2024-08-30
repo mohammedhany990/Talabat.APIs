@@ -117,34 +117,41 @@ namespace Talabat.APIs.Controllers
             }
 
             var jwtSecurityToken = await _tokenService.CreateTokenAsync(user, _userManager);
-
+            
             var returnedUser = new UserDto()
             {
                 Email = user.Email,
                 DisplayName = user.DisplayName,
                 Token = new JwtSecurityTokenHandler().WriteToken(jwtSecurityToken),
-
+                ExpiresOn = jwtSecurityToken.ValidTo,
             };
 
             //Refresh Token
             if (user.RefreshTokens.Any(A => A.IsActive))
             {
                 var activeToken = user.RefreshTokens.FirstOrDefault(A => A.IsActive);
-                returnedUser.Token = activeToken.Token;
+
+                returnedUser.RefreshToken = activeToken.Token;
+
                 returnedUser.RefreshTokenExpiration = activeToken.ExpiresOn;
             }
             else
             {
                 var refreshToken = _tokenService.GenerateRefreshToken();
+
                 returnedUser.RefreshToken = refreshToken.Token;
+
                 returnedUser.RefreshTokenExpiration = refreshToken.ExpiresOn;
+
                 user.RefreshTokens.Add(refreshToken);
+
                 await _userManager.UpdateAsync(user);
             }
             if (!string.IsNullOrEmpty(returnedUser.RefreshToken))
             {
                 SetRefreshTokenInCookie(returnedUser.RefreshToken, returnedUser.RefreshTokenExpiration);
             }
+
             return Ok(returnedUser);
 
 
@@ -200,7 +207,7 @@ namespace Talabat.APIs.Controllers
             {
                 var token = await _userManager.GeneratePasswordResetTokenAsync(user);
 
-                var resetPasswordLink = Url.Action(nameof(ResetPassword),
+               var resetPasswordLink = Url.Action(nameof(ResetPassword),
                     "Accounts", new { Token = token, email = user.Email },
                     Request.Scheme);
 
@@ -267,6 +274,7 @@ namespace Talabat.APIs.Controllers
         #region GetCurrentUser
 
         [HttpGet]
+        [Authorize]
         public async Task<ActionResult<UserDto>> GetCurrentUser()
         {
 
@@ -301,12 +309,16 @@ namespace Talabat.APIs.Controllers
 
         #region GetUserAddress
         [HttpGet("GetUserAddress")]
+        [Authorize]
         public async Task<ActionResult<Address>> GetUserAddress()
         {
             var user = await _userManager.FindUserWithAddressAsync(User);
 
             var ReturnesAddress = _mapper.Map<Address, AddressDto>(user.Address);
-
+            if (ReturnesAddress is null)
+            {
+                return NotFound(new ApiResponse(404, "No Address Found"));
+            }
             return Ok(ReturnesAddress);
         }
         #endregion

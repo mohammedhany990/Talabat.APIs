@@ -108,7 +108,7 @@ namespace Talabat.APIs
             #endregion
 
 
-            #region Cingigure Kestrel [Middlewares]
+ #region Cingigure Kestrel [Middlewares]
             // Configure the HTTP request pipeline.
 
             if (app.Environment.IsDevelopment())
