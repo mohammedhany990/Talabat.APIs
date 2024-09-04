@@ -23,7 +23,8 @@ namespace Talabat.APIs.Controllers
             _unitOfWork = unitOfWork;
         }
 
-        [Cache(600)]
+
+        //[Cache(600)]
         [HttpGet]
         public async Task<ActionResult<Pagination<ProductReturningDto>>> GetAllProducts([FromQuery] ProductSpecificationParameters parameters)
         {
@@ -33,6 +34,7 @@ namespace Talabat.APIs.Controllers
             var MappedProducts = _mapper.Map<IEnumerable<Product>,
                                                              IEnumerable<ProductReturningDto>>(products);
             var CountSpec = new CountSpec(parameters);
+
             var count = await _unitOfWork.Repository<Product>().GetSpecCount(CountSpec);
 
             return Ok(new Pagination<ProductReturningDto>(parameters.PageIndex, parameters.PageSize, count, MappedProducts));
@@ -51,7 +53,7 @@ namespace Talabat.APIs.Controllers
 
 
 
-        [Cache(600)]
+        //[Cache(600)]
         [HttpGet("Brands")]
         public async Task<ActionResult<IEnumerable<ProductBrand>>> Brands()
         {
@@ -59,7 +61,7 @@ namespace Talabat.APIs.Controllers
             return Ok(brands);
         }
 
-        [Cache(600)]
+        //[Cache(600)]
         [HttpGet("Types")]
         public async Task<ActionResult<IEnumerable<ProductType>>> ProductTypes()
         {

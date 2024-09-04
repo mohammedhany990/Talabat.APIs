@@ -71,7 +71,8 @@ namespace Talabat.APIs
                 {
                     options.AllowAnyHeader();
                     options.AllowAnyMethod();
-                    options.WithOrigins(builder.Configuration["FrontendBaseUrl"]);
+                    options.AllowAnyOrigin();
+                    
                 });
             });
 
@@ -108,14 +109,14 @@ namespace Talabat.APIs
             #endregion
 
 
- #region Cingigure Kestrel [Middlewares]
+            #region Cingigure Kestrel [Middlewares]
             // Configure the HTTP request pipeline.
+                app.UseSwagger();
+                app.UseSwaggerUI();
 
             if (app.Environment.IsDevelopment())
             {
                 app.UseMiddleware<ExceptionMiddleware>();
-                app.UseSwagger();
-                app.UseSwaggerUI();
             }
             app.UseStatusCodePagesWithReExecute("/errors/{0}");
             app.UseHttpsRedirection();

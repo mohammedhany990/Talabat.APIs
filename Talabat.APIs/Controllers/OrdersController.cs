@@ -13,6 +13,7 @@ using Order = Talabat.Core.Entities.Order_Aggregate.Order;
 namespace Talabat.APIs.Controllers
 {
 
+    [Authorize]
     public class OrdersController : ApiBaseController
     {
         private readonly IOrderService _orderService;
@@ -25,7 +26,6 @@ namespace Talabat.APIs.Controllers
         }
 
 
-        [Authorize]
         [ProducesResponseType(typeof(OrderToReturnDto), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status400BadRequest)]
         [HttpPost]
@@ -53,23 +53,28 @@ namespace Talabat.APIs.Controllers
 
         [ProducesResponseType(typeof(IReadOnlyList<OrderToReturnDto>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
-        [Authorize]
         [HttpGet]
         public async Task<ActionResult<IReadOnlyList<OrderToReturnDto>>> GetOrdersForUser()
         {
             var buyerEmail = User.FindFirstValue(ClaimTypes.Email);
+
             var orders = await _orderService.GetOrdersForUserAsync(buyerEmail);
-            if (orders is null)
+
+            if (orders is null )
             {
-                return BadRequest(new ApiResponse(404, "There are noo Orders."));
+                return BadRequest(new ApiResponse(400, "There are no Orders."));
             }
+            if ( orders?.Count() <= 0)
+            {
+                return NotFound(new ApiResponse(404, "There are no Orders."));
+            }
+
             var MappedOrder = _mapper.Map<IReadOnlyList<Order>, IReadOnlyList<OrderToReturnDto>>(orders);
 
             return Ok(MappedOrder);
         }
 
 
-        [Authorize]
         [HttpGet("{id}")]
         [ProducesResponseType(typeof(Order), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ApiResponse), StatusCodes.Status404NotFound)]
@@ -79,7 +84,7 @@ namespace Talabat.APIs.Controllers
             var order = await _orderService.GetOrderByIdForUserAsync(buyerEmail, id);
             if (order is null)
             {
-                return BadRequest(new ApiResponse(404, $"There are no Order with {id} for this user."));
+                return BadRequest(new ApiResponse(404, $"There is no Order with {id} for this user."));
             }
             var MappedOrder = _mapper.Map<Order, OrderToReturnDto>(order);
 
@@ -92,7 +97,7 @@ namespace Talabat.APIs.Controllers
             var deliveries = await _orderService.GetDeliveryMethodAsync();
             if (deliveries is null)
             {
-                return BadRequest(new ApiResponse(404, $"There are no Delivery Methods"));
+                return BadRequest(new ApiResponse(404, $"There is no Delivery Methods"));
             }
             return Ok(deliveries);
         }
