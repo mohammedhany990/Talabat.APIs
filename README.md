@@ -1,4 +1,4 @@
-# DeliveryFood API  
+# FoodDelivery API  
 
 A robust and scalable delivery API developed using **ASP.NET Core 6.0**. This project emulates the core functionalities of a food delivery system, offering features like cart management, order processing, and payment integration. The API was designed with **Onion Architecture** and incorporates modern development practices for maintainability and performance.  
 
