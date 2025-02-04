@@ -24,15 +24,15 @@ namespace Talabat.Repository.Data
                 }
             }
 
-            if (dbContext.ProductTypes.Count() == 0)
+            if (dbContext.ProductCategories.Count() == 0)
             {
-                var CategoriesData = File.ReadAllText("../Talabat.Repository/Data/DataSeeding/types.json");
-                var ProductTypes = JsonSerializer.Deserialize<List<ProductType>>(CategoriesData);
+                var CategoriesData = File.ReadAllText("../Talabat.Repository/Data/DataSeeding/categories.json");
+                var ProductTypes = JsonSerializer.Deserialize<List<ProductCategory>>(CategoriesData);
                 if (ProductTypes?.Count() > 0)
                 {
                     foreach (var type in ProductTypes)
                     {
-                        dbContext.Set<ProductType>().Add(type);
+                        dbContext.Set<ProductCategory>().Add(type);
                     }
 
                     await dbContext.SaveChangesAsync();

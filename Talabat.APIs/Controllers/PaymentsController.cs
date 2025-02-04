@@ -52,12 +52,12 @@ namespace Talabat.APIs.Controllers
             Order? order;
             switch (stripeEvent.Type)
             {
-                case Events.PaymentIntentSucceeded:
+                case EventTypes.PaymentIntentSucceeded:
                     order = await _paymentService.UpdateOrderStatusAsync(paymentIntent.Id, true);
                     _logger.LogInformation("Order is succeeded {0}", paymentIntent?.Id);
                     _logger.LogInformation("Unhandled event type: {0}", stripeEvent.Type);
                     break;
-                case Events.PaymentIntentPaymentFailed:
+                case EventTypes.PaymentIntentPaymentFailed:
                     order = await _paymentService.UpdateOrderStatusAsync(paymentIntent.Id, false);
                     _logger.LogInformation("Order is failed {0}", paymentIntent?.Id);
                     _logger.LogInformation("Unhandled event type: {0}", stripeEvent.Type);

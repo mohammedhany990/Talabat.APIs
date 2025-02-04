@@ -18,7 +18,17 @@ namespace Talabat.APIs.Extensions
                 .AddEntityFrameworkStores<AppUserDbContext>()
                 .AddDefaultTokenProviders();
 
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.Password.RequireDigit = false;
+                options.Password.RequireLowercase = false;
+                options.Password.RequireUppercase = false;
+                options.Password.RequireNonAlphanumeric = false;
+                options.Password.RequiredLength = 1;
+                options.Password.RequiredUniqueChars = 0;
 
+
+            });
 
             // Allow DI for ITokenService
             services.AddScoped<IAuthenticationService, AuthenticationService>();

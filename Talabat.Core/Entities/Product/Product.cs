@@ -11,8 +11,8 @@
         public ProductBrand ProductBrand { get; set; }
 
 
-        public int ProductTypeId { get; set; }
-        public ProductType ProductType { get; set; }
+        public int ProductCategoryId { get; set; }
+        public ProductCategory ProductCategory { get; set; }
 
     }
 }

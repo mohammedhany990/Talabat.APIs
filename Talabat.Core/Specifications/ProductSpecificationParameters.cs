@@ -4,12 +4,12 @@
     {
         public string? sort { get; set; }
         public int? BrandId { get; set; }
-        public int? TypeId { get; set; }
+        public int? CategoryId { get; set; }
 
         private int pageSize = 5;
 
         public string? search { get; set; }
-        public string? TypeName { get; set; }
+        public string? CategoryName { get; set; }
         public string? BrandName { get; set; }
 
         public int PageSize

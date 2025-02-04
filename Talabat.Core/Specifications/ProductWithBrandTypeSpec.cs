@@ -7,15 +7,15 @@ namespace Talabat.Core.Specifications
         public ProductWithBrandTypeSpec(ProductSpecificationParameters? parameters)
             : base(P =>
                 (!parameters.BrandId.HasValue || P.ProductBrandId == parameters.BrandId) &&
-                (!parameters.TypeId.HasValue || P.ProductTypeId == parameters.TypeId) &&
+                (!parameters.CategoryId.HasValue || P.ProductCategoryId == parameters.CategoryId) &&
                 (string.IsNullOrEmpty(parameters.search) || P.Name.ToLower().Contains(parameters.search.ToLower())) &&
                 (string.IsNullOrEmpty(parameters.BrandName) || P.ProductBrand.Name.ToLower().Contains(parameters.BrandName.ToLower())) &&
-                (string.IsNullOrEmpty(parameters.TypeName) || P.ProductType.Name.ToLower().Contains(parameters.TypeName.ToLower()))
+                (string.IsNullOrEmpty(parameters.CategoryName) || P.ProductCategory.Name.ToLower().Contains(parameters.CategoryName.ToLower()))
 
                   )
         {
             Includes.Add(P => P.ProductBrand);
-            Includes.Add(P => P.ProductType);
+            Includes.Add(P => P.ProductCategory);
 
             if (!string.IsNullOrEmpty(parameters.sort))
             {
@@ -37,7 +37,7 @@ namespace Talabat.Core.Specifications
             }
             else
             {
-                ApplyOrderByAsc(P => P.Name);
+                ApplyOrderByAsc(P => P.Id);
             }
 
             ApplyPagination(parameters.PageSize * (parameters.PageIndex - 1), parameters.PageSize);
@@ -47,7 +47,7 @@ namespace Talabat.Core.Specifications
             : base(P => P.Id == id)
         {
             Includes.Add(P => P.ProductBrand);
-            Includes.Add(P => P.ProductType);
+            Includes.Add(P => P.ProductCategory);
         }
     }
 }
